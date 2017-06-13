@@ -1,7 +1,13 @@
-<div class="b-screen-module">
-	<div class="b-screen-module__cell"><p class="b-screen-module__event-label">{{ eventLabel }}</p></div>
-	<div class="b-screen-module__cell"><p>{{ eventName }}</p></div>
-	<div class="b-screen-module__cell"><p>{{ eventPrice }}</p></div>	
-	<div class="b-screen-module__cell"><p>{{ eventLocation }}</p></div>
-	<div class="b-screen-module__cell"><p>{{ eventTime }}</p></div>
+<div class="screen-module">
+	<div class="screen-module__left-col">
+		<div class="screen-module__cell"><p class="screen-module__event-label">{{ eventLabel }}</p></div>
+	</div>
+	<div class="screen-module__right-col">
+		<div class="screen-module__cell"><p class="screen-module__event-name">{{ eventName }}</p></div>
+		<div class="info-row">
+			<div class="screen-module__cell"><p class="screen-module__event-time">{{ eventTime }}</p></div>	
+			<div class="screen-module__cell"><p class="screen-module__event-price">{{ eventPrice }}</p></div>
+			<div class="screen-module__cell"><p class="screen-module__event-location">{{ eventLocation }}</p></div>
+		</div>
+	</div>
 </div>
