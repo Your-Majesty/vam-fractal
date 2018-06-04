@@ -7,17 +7,9 @@
   width: 100%;
 
   @include bpMinXSmall {
-    background-color: siteColor(vam-grey-5);
     flex-direction: row;
-    height: 300px;
+    min-height: 300px;
     padding: 30px 10px;
-  }
-
-  @include bpMinSmall {
-    background-color: siteColor(vam-grey-5);
-    flex-direction: row;
-    height: 300px;
-    padding: 30px 65px;
   }
 
   &__info {
@@ -32,64 +24,37 @@
   }
 
   &__logo {
-    display: block;
-    height: 37px;
-    margin-bottom: 18px;
-    text-align: center;
-
-    svg {
-      color: siteColor(vam-grey-3);
-      height: 100%;
-      width: 100%;
-    }
-
-    .no-flexbox & {
-      display: none;
-    } 
+    color: siteColor(vam-grey-4);
+    height: 200px;
+    opacity: .35;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 280px;
 
     @include bpMinXSmall {
-      margin-top: -50px;
-      min-width: 540px;
-      width: 168%;
+      @include constrainedImage(1 .573);
+      max-width: initial;
+      min-height: 600px;
+      position: absolute;
+      right: -50%;
+      top: -20vw;
+      width: 170%;
 
-      .no-flexbox & {
-        display: block;
+      & svg {
+        @include constrainedImageInner;
       }
+    }
 
-      svg {
-        bottom: 0;
-        color: siteColor(vam-grey-4);
-        height: 370px;
-        margin: -17px 0 0 -15%;
-        width: 130%;
-      }
-
-      // @include bpMinLarge {
-      //   position: absolute;
-      //   svg {
-      //     -webkit-filter: invert(100%);
-      //     filter: invert(100%);
-      //   }
-
-      //   @supports (mask-repeat: repeat) {
-      //     mask-image: url(image-path('/assets/svg/svg-template.svg#valogo'));
-      //     mask-position: 40% 65%;
-      //     mask-repeat: no-repeat;
-      //     mask-size: 133%;
-
-      // svg {
-      //   display: none;
-      // }
-      // }
+    @include bpMinMedium {
+      right: -5%;
+      width: 70%;
     }
 
     @include bpMinLarge {
-      svg {
-        height: 420px;
-        margin: -17px 0 0 -15%;
-        width: 130%;
-      }
-     }
+      top: -200px;
+      width: 600px;
+    }
   }
 
   &__headline {
@@ -103,10 +68,6 @@
       margin-bottom: 10px;
       text-align: left;
     }
-
-    // @include bpMinSmall {
-    //   @include typeSetting(6, bold);
-    // }
   }
 
   &__descriptor {
@@ -139,13 +100,13 @@
   }
 
   &__form {
-    z-index: 2;
+    margin: auto;
+    max-width: 650px;
+    position: relative;
+    width: 100%;
 
     @include bpMinXSmall {
-      background-color: transparent;
-      margin: 0 auto;
-      max-width: 650px;
-      width: 100%;
+      padding: 0 65px;
     }
 
     @include bpMinSmall {
@@ -165,7 +126,6 @@
         padding: 15px;
         text-align: center;
         width: 100%;
-        z-index: 2;
 
         &::placeholder {
           color: siteColor(vam-grey-4);
